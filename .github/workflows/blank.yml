@@ -1,0 +1,30 @@
+name: CI
+
+on: [push]
+
+jobs:
+  test1:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      
+      - name: pwd
+        run: pwd
+        
+      - name: ls 
+        run: ls
+    
+  test2:
+    needs: test1
+    runs-on: ubuntu-latest
+    steps:
+       
+      - name: pwd
+        run: pwd
+      
+      - name: ls 
+        run: ls
+       
